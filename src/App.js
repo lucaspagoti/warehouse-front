@@ -22,7 +22,7 @@ const [password, setPassword] = useState("");
                 value={email}
                 onChange={e => setEmail(e.target.value)}
               />
-              <span className="focus-input" data-placeholder="Email"></span>
+              <span className="focus-input" data-placeholder="Usuário"></span>
             </div>
 
             <div className="wrap-input">
