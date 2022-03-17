@@ -1,42 +1,45 @@
-import React, { useState,  } from "react";
-import LoginForm from "./components/LoginForm";
+import React, { useState } from "react";
+import jpIMG from "./assets/logo-warehouse.png";
+import "./style.css";
 
 function App() {
-  const adminUser = {
-    email: "admin@admin.com",
-    password: "admin123",
-  };
-
-  const [user, setUset] = useState({ name: "", email: "" });
-  const [advice, setAdvice] = useState("");
-
-  const login = (details) => {
-    console.log(details);
-  };
-
-  const logout = () => {
-    console.log(logout);
-  };
-
-  
+const [email, setEmail] = useState("");
+const [password, setPassword] = useState("");
 
   return (
-    <>
-      {" "}
-      
-      <div className="App">
-        {user.email != "" ? (
-          <div class="welcome">
-            <h2>
-              Welcome, <span>{user.name}</span>
-            </h2>
-            <button>Logout</button>
-          </div>
-        ) : (
-          <LoginForm />
-        )}
+    <div className="container">
+      <div className="container-login">
+        <div className="wrap-login">
+          <form className="login-form">
+           
+            <span className="login-form-title">
+              <img src={jpIMG} alt="warehouse" />
+            </span>
+            <span className="login-form-title">Bem-vindo!</span>
+
+            <div className="wrap-input">
+              <input className={email !== "" ? 'has-val input' : 'input'} type="email" 
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+              />
+              <span className="focus-input" data-placeholder="Email"></span>
+            </div>
+
+            <div className="wrap-input">
+              <input className={password !== "" ? 'has-val input' : 'input'} type="password" 
+              value={password}
+              onChange={e => setPassword(e.target.value)}
+              />
+              <span className="focus-input" data-placeholder="Password"></span>
+            </div>
+
+            <div className="container-login-form-btn">
+              <button className="login-form-btn">Login</button>
+            </div>
+          </form>
+        </div>
       </div>
-    </>
+    </div>
   );
 }
 
