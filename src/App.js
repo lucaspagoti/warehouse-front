@@ -45,4 +45,3 @@ const [password, setPassword] = useState("");
 
 export default App;
 
-// https://www.youtube.com/watch?v=91qEdc6dSUs 8:27
